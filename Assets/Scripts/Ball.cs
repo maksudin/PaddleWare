@@ -32,8 +32,8 @@ namespace Assets.Scripts
             _velocity.x = Random.Range(-_maxStartXSpeed, _maxStartXSpeed);
             _velocity.y = -_constantYSpeed;
             gameObject.SetActive(true);
+            SetTrailEmission(enabled: true);
             _startParticleSystem.Emit(_startParticleEmission);
-            SetTrailEmission(true);
             _trailParticleSystem.Play();
         }
 
@@ -41,7 +41,7 @@ namespace Assets.Scripts
         {
             _position.x = 0f;
             gameObject.SetActive(false);
-            SetTrailEmission(false);
+            SetTrailEmission(enabled: false);
         }
 
         void SetTrailEmission(bool enabled)

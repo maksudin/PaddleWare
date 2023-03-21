@@ -5,11 +5,11 @@ namespace Assets.Scripts
     public class LivelyCamera : MonoBehaviour
     {
 		[SerializeField, Min(0f)]
-		float _springStrength = 100f,
-			  _dampingStrength = 10f,
-			  _jostleStrength = 40f,
-			  _pushStrength = 1f,
-			  _maxDeltaTime = 1f / 60f;
+		readonly float _springStrength = 100f,
+					   _dampingStrength = 10f,
+					   _jostleStrength = 40f,
+					   _pushStrength = 1f,
+					   _maxDeltaTime = 1f / 60f;
 
 		Vector3 _anchorPosition, _velocity;
 

@@ -6,7 +6,6 @@ namespace Assets.Scripts
     {
         [SerializeField, Min(0f)]
         private float _maxXSpeed = 20f,
-                      _startXSpeed = 8f,
                       _maxStartXSpeed = 2f,
                       _constantYSpeed = 10f,
                       _extents = 0.5f;

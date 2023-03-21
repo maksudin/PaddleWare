@@ -25,21 +25,21 @@ namespace Assets.Scripts
 
         private void LateUpdate()
         {
-			float dt = Time.deltaTime;
-			while (dt > _maxDeltaTime)
+			float dtime = Time.deltaTime;
+			while (dtime > _maxDeltaTime)
 			{
 				TimeStep(_maxDeltaTime);
-				dt -= _maxDeltaTime;
+				dtime -= _maxDeltaTime;
 			}
-			TimeStep(dt);
+			TimeStep(dtime);
 		}
 
-        void TimeStep(float dt)
+        void TimeStep(float deltaTime)
 		{
 			Vector3 displacement = _anchorPosition - transform.localPosition;
 			Vector3 acceleration = _springStrength * displacement - _dampingStrength * _velocity;
-			_velocity += acceleration * dt;
-			transform.localPosition += _velocity * dt;
+			_velocity += acceleration * deltaTime;
+			transform.localPosition += _velocity * deltaTime;
 		}
 	}
 }

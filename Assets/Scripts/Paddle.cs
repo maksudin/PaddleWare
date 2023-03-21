@@ -59,11 +59,11 @@ namespace Assets.Scripts
 
         public void Move(float target, float arenaExtents)
         {
-            Vector3 p = transform.localPosition;
-            p.x = _isAI ? AdjustByAI(p.x, target) : AdjustByPlayer(p.x);
+            Vector3 pos = transform.localPosition;
+            pos.x = _isAI ? AdjustByAI(pos.x, target) : AdjustByPlayer(pos.x);
             float limit = arenaExtents - _extents;
-            p.x = Mathf.Clamp(p.x, -limit, limit);
-            transform.localPosition = p;
+            pos.x = Mathf.Clamp(pos.x, -limit, limit);
+            transform.localPosition = pos;
         }
 
         private float AdjustByAI(float x, float target)
@@ -102,9 +102,9 @@ namespace Assets.Scripts
         void SetExtents(float newExtents)
         {
             _extents = newExtents;
-            Vector3 s = transform.localScale;
-            s.x = 2f * newExtents;
-            transform.localScale = s;
+            Vector3 scale = transform.localScale;
+            scale.x = 2f * newExtents;
+            transform.localScale = scale;
         }
     }
 }
